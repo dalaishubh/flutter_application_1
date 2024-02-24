@@ -47,16 +47,27 @@ class _MainAppState extends State<MainApp> {
               height: 50,
               width: 350.0,
               child: Container(
-                child: ElevatedButton.icon(
+                child: ElevatedButton(
                     style: ButtonStyle(
                         backgroundColor:
-                            MaterialStateProperty.all(Color(0xFF7583CA))),
+                            MaterialStateProperty.all(Color(0XFF7583CA))),
                     onPressed: () {},
-                    icon: Icon(Icons.abc_rounded),
-                    label: Text('CONTINUE WITH FACEBOOK',
-                        style: TextStyle(
-                            backgroundColor: Color(0xFF7583CA),
-                            color: Colors.white))),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          'image/fb.png',
+                          height: 30,
+                        ),
+                        SizedBox(
+                          width: 40.0,
+                        ),
+                        Text(
+                          'CONTINUE WITH FACEBOOK',
+                          style: TextStyle(color: Colors.white),
+                        )
+                      ],
+                    )),
               ),
             ),
             SizedBox(
@@ -66,14 +77,24 @@ class _MainAppState extends State<MainApp> {
               height: 50.0,
               width: 350.0,
               child: Container(
-                child: ElevatedButton.icon(
-                  onPressed: () {},
-                  icon: Icon(Icons.abc_rounded),
-                  label: Text(
-                    'CONTINUE WITH GOOGLE',
-                    style: TextStyle(color: Colors.black),
-                  ),
-                ),
+                child: ElevatedButton(
+                    onPressed: () {},
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          'image/google.png',
+                          height: 30,
+                        ),
+                        SizedBox(
+                          width: 40.0,
+                        ),
+                        Text(
+                          'CONTINUE WITH GOOGLE',
+                          style: TextStyle(color: Colors.black),
+                        )
+                      ],
+                    )),
               ),
             ),
             SizedBox(
@@ -82,25 +103,22 @@ class _MainAppState extends State<MainApp> {
             Container(
                 child: Text(
               'OR LOG IN WITH EMAIL',
-              style: TextStyle(color: Colors.grey),
+              style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold),
             )),
             SizedBox(
               height: 30,
             ),
             Container(
+              color: Color(0XFFF2F3F7),
               height: 50.0,
               width: 350.0,
-              decoration: BoxDecoration(
-                shape: BoxShape.rectangle,
-                border: Border.all(
-                  color: Colors.black,
-                  width: 1.0,
-                ),
-              ),
               child: TextField(
+                style: TextStyle(color: Color(0XFFA1A4B2)),
                 decoration: InputDecoration(
                   hintText: 'Email Address',
-                  border: InputBorder.none,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
                 ),
               ),
             ),
@@ -108,19 +126,16 @@ class _MainAppState extends State<MainApp> {
               height: 20,
             ),
             Container(
+              color: Color(0XFFF2F3F7),
               height: 50.0,
               width: 350.0,
-              decoration: BoxDecoration(
-                shape: BoxShape.rectangle,
-                border: Border.all(
-                  color: Colors.black,
-                  width: 1.0,
-                ),
-              ),
               child: TextField(
+                style: TextStyle(color: Color(0XFFA1A4B2)),
                 decoration: InputDecoration(
                   hintText: 'Password',
-                  border: InputBorder.none,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
                 ),
               ),
             ),
@@ -134,7 +149,7 @@ class _MainAppState extends State<MainApp> {
                 child: ElevatedButton(
                   style: ButtonStyle(
                       backgroundColor:
-                          MaterialStateProperty.all(Color(0xFF7583CA))),
+                          MaterialStateProperty.all(Color(0xFF8E97FD))),
                   onPressed: () {},
                   child: Text(
                     "LOG IN",
@@ -147,24 +162,41 @@ class _MainAppState extends State<MainApp> {
               height: 20,
             ),
             SizedBox(
-              child: ElevatedButton(
+              child: TextButton(
                 style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(Colors.white)),
                 onPressed: () {},
-                child: Text("Forgot Password"),
+                child: Text(
+                  "Forgot Password?",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
               ),
             ),
             SizedBox(
               height: 90,
             ),
             Container(
-              child: ElevatedButton(
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: 45.0,
+                  ),
+                  Text('ALREADY HAVE AN ACCOUNT?'),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text('SIGN UP'),
+                  )
+                ],
+              ),
+              /*child: TextButton(
                 onPressed: () {},
                 child: Text("ALREADY HAVE AN ACCOUNT? SIGN UP"),
-                style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.white)),
-              ),
-
+              ),*/
+              /* Container(
+              child: Row (children:[Text('ALREADY HAVE AN ACCOUNT?'), TextButton(
+                onPressed: () {},
+                child: Text("ALREADY HAVE AN ACCOUNT? SIGN UP"),
+              ),),),]*/
               //Container(
               // child: TextField(keyboardType: TextInputType.emailAddress,)
             ),
